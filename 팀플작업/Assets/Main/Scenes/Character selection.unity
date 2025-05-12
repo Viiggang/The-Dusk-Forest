@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c544f4a76f41c9e4ba1846a13d19638a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjTemp: {fileID: 164940487}
+  uiRoot: {fileID: 164940487}
 --- !u!1 &214259197
 GameObject:
   m_ObjectHideFlags: 0

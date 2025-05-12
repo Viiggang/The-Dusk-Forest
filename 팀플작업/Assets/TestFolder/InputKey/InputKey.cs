@@ -12,7 +12,7 @@ using UnityEngine;
         // 키 매핑 등록
         keyFunctionMap[KeyCode.M] = MapUI;
         keyFunctionMap[KeyCode.B] = InventoryUI;
-        keyFunctionMap[KeyCode.Escape] = ESC;
+        keyFunctionMap[KeyCode.Escape] = HideLastUI;
         //keyFunctionMap["T"] = null;
         //keyFunctionMap["Y"] = null;
         //keyFunctionMap["U"] = null;
