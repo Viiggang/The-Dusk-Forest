@@ -49,10 +49,7 @@ public class SelectWinodw : MonoBehaviour
     void activefalse()
     {
         var obj=GameObject.Find("YesOrNo_UI");
-        if (obj != null)
-        {
             obj.SetActive(false);
-        }
     }
     void activetrue()
     {
