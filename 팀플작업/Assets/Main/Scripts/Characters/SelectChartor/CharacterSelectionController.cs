@@ -5,13 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
  
-public enum character
-{
-    one=1,
-    two,
-    three,
-    four,
-}
 
 public class CharacterSelectionController : Singleton<CharacterSelectionController>
 {

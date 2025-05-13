@@ -62,7 +62,7 @@ public class SelectWindowController : MonoBehaviour
                 var obT=GameObject.Find("Job_Text");
                 SelectionText= obT.GetComponent<Text>();
                 SelectionText.text = CharacterSelectionController.Instance.CharacterSelection.ToString();
-                Debug.Log("오브젝트를 활성화했습니다!");
+               // Debug.Log("오브젝트를 활성화했습니다!");
             }
         }
         
