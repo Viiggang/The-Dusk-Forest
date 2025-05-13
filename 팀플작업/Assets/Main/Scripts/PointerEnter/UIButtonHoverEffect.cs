@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Scene_2Button : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
+public class UIButtonHoverEffect : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
 {
     RectTransform m_RectTransform;//오브젝트 RectTransform
     Vector3 originalScale;//원래 사이즈

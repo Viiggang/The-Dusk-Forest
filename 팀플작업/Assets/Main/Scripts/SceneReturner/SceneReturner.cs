@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class Return : MonoBehaviour
+public class SceneReturner : MonoBehaviour
 {
     Button button;
     string scene = "GameStartScreen";

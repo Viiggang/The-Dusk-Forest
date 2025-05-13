@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public partial class InputKeyFunction  
+public partial class InputKey
 {
     private static Stack<GameObject> uiStack = new Stack<GameObject>();
     public GameObject uiRoot;
 
-    public void MapUI() => ShowUI("inven");
-    public void InventoryUI() => ShowUI("Image (1)");
+    public void ShowMapUI() => ShowUI("inven");
+    public void ShowInventoryUI() => ShowUI("Image (1)");
 
     public void ShowUI(string name)
     {

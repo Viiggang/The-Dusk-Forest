@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
- public partial class InputKeyFunction : MonoBehaviour
+ public partial class InputKey : MonoBehaviour
 {
     // 키 문자(string) → 함수 매핑
     private Dictionary<KeyCode, Action> keyFunctionMap = new Dictionary<KeyCode, Action>();
-
+    public ChainPattern chainPattern;//<--직려화로 붙여넣기
     void Start()
     {
         // 키 매핑 등록
-        keyFunctionMap[KeyCode.M] = MapUI;
-        keyFunctionMap[KeyCode.B] = InventoryUI;
+        keyFunctionMap[KeyCode.M] = ShowMapUI;
+        keyFunctionMap[KeyCode.B] = ShowInventoryUI;
         keyFunctionMap[KeyCode.Escape] = HideLastUI;
         //keyFunctionMap["T"] = null;
         //keyFunctionMap["Y"] = null;
@@ -37,7 +37,7 @@ using UnityEngine;
         //keyFunctionMap["N"] = null;
         //keyFunctionMap["M"] = null;
         //keyFunctionMap["1"] = ActionSpace;
-        //keyFunctionMap["Space"] = ActionSpace;
+        keyFunctionMap[KeyCode.Space] = chainPattern.TypeSearch;
     }
 
     void Update()

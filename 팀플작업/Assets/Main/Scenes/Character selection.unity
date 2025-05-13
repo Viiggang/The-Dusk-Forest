@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.24313727, g: 0.24313727, b: 0.24313727, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19f161a7ccb4742b5144179f9af6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectionText: {fileID: 0}
 --- !u!114 &137484994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d72794047b8ff641836a3bbcfac8cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatator: 1
+  m_character: 1
 --- !u!1 &145393840
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +398,8 @@ GameObject:
   - component: {fileID: 164940490}
   - component: {fileID: 164940489}
   - component: {fileID: 164940488}
-  - component: {fileID: 164940492}
+  - component: {fileID: 164940493}
+  - component: {fileID: 164940494}
   m_Layer: 5
   m_Name: TestUI
   m_TagString: Untagged
@@ -489,7 +491,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &164940492
+--- !u!114 &164940493
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -498,9 +500,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 164940487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c544f4a76f41c9e4ba1846a13d19638a, type: 3}
+  m_Script: {fileID: 11500000, guid: e1597e4188749ce49bb9559accb5631c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &164940494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164940487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802abc9f44fe4234997818707b05905e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chainPattern: {fileID: 164940493}
   uiRoot: {fileID: 164940487}
 --- !u!1 &214259197
 GameObject:
@@ -673,6 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19f161a7ccb4742b5144179f9af6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectionText: {fileID: 0}
 --- !u!114 &214259207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d72794047b8ff641836a3bbcfac8cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatator: 3
+  m_character: 3
 --- !u!1 &285147488
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19f161a7ccb4742b5144179f9af6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectionText: {fileID: 0}
 --- !u!114 &285147491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1839,6 +1856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19f161a7ccb4742b5144179f9af6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectionText: {fileID: 0}
 --- !u!114 &967855044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1851,7 +1869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d72794047b8ff641836a3bbcfac8cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatator: 4
+  m_character: 4
 --- !u!1 &1019048615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,50 +2133,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251267997}
   m_CullTransparentMesh: 1
---- !u!1 &1285223680
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1285223682}
-  - component: {fileID: 1285223681}
-  m_Layer: 0
-  m_Name: Key
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1285223681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285223680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802abc9f44fe4234997818707b05905e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1285223682
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285223680}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1317227725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,7 +2517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875c2b479ac8ba94fad5e180b6868f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectChatator: 0
+  CharacterSelection: 0
 --- !u!4 &1443202813
 Transform:
   m_ObjectHideFlags: 0
@@ -2611,6 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19f161a7ccb4742b5144179f9af6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectionText: {fileID: 0}
 --- !u!114 &1551658053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2897,6 +2872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19f161a7ccb4742b5144179f9af6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectionText: {fileID: 0}
 --- !u!114 &1980331113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3110,6 +3086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19f161a7ccb4742b5144179f9af6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectionText: {fileID: 0}
 --- !u!114 &2067942560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3122,7 +3099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d72794047b8ff641836a3bbcfac8cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatator: 2
+  m_character: 2
 --- !u!1 &2072783240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,5 +3183,4 @@ SceneRoots:
   - {fileID: 1183212845}
   - {fileID: 688956846}
   - {fileID: 1443202813}
-  - {fileID: 1285223682}
   - {fileID: 164940491}

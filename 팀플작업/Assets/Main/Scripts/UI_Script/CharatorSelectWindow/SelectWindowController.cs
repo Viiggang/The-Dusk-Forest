@@ -3,35 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SelectWinodw : MonoBehaviour
+public class SelectWindowController : MonoBehaviour
 {
-    string thisObjectName;
-    Button button;
-  public  static  Text thisText;
+    string myName;
+    Button SelfButton;
+    public Text SelectionText;
     private void Awake()
     {
-        thisObjectName = this.gameObject.name;
-        button = GetComponent<Button>();
+        myName = this.gameObject.name;
+        SelfButton = GetComponent<Button>();
 
     }
     void Start()
     {
       
-        switch (thisObjectName)
+        switch (myName)
         {
             case "Yes":
-                button.onClick.AddListener(NextStage);
+                SelfButton.onClick.AddListener(NextStage);
                 break;
             case "No":
-                button.onClick.AddListener(activefalse);
+                SelfButton.onClick.AddListener(ActiveFalse);
                 break;
             case "Job_Text":
                
-                thisText = GetComponent<Text>();
-                thisText.text = Select.Instance.SelectChatator.ToString();
+                SelectionText = GetComponent<Text>();
+                SelectionText.text = CharacterSelectionController.Instance.CharacterSelection.ToString();
                 break;
             case "Button":
-                button.onClick.AddListener(activetrue);
+                SelfButton.onClick.AddListener(ActiveTrue);
                 break;
             default:
                
@@ -46,12 +46,12 @@ public class SelectWinodw : MonoBehaviour
     {
         Debug.Log("다음스테이지 ㄱ");
     }
-    void activefalse()
+    void ActiveFalse()
     {
         var obj=GameObject.Find("YesOrNo_UI");
             obj.SetActive(false);
     }
-    void activetrue()
+    void ActiveTrue()
     {
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (var obj in allObjects)
@@ -60,8 +60,8 @@ public class SelectWinodw : MonoBehaviour
             {
                 obj.SetActive(true);
                 var obT=GameObject.Find("Job_Text");
-                thisText= obT.GetComponent<Text>();
-                thisText.text = Select.Instance.SelectChatator.ToString();
+                SelectionText= obT.GetComponent<Text>();
+                SelectionText.text = CharacterSelectionController.Instance.CharacterSelection.ToString();
                 Debug.Log("오브젝트를 활성화했습니다!");
             }
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Scenes_Logic : MonoBehaviour
+public class GameSceneManager : MonoBehaviour
 {
     string thisLayer;//오브젝트Layer값을 받을 변수
     string TitleText;//오브젝트 Text에 값을 넣어줄 문자변수

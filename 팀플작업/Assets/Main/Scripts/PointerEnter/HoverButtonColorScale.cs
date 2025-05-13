@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Unity.UI;
 using UnityEngine.UI;
-public class ButtonPointerEnter : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HoverButtonColorScale : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     RectTransform m_RectTransform;//오브젝트 RectTransform
     Vector3 originalScale;//원래 사이즈

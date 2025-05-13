@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
  
-public enum Chatator
+public enum character
 {
     one=1,
     two,
@@ -13,10 +13,10 @@ public enum Chatator
     four,
 }
 
-public class Select : Singleton<Select>
+public class CharacterSelectionController : Singleton<CharacterSelectionController>
 {
   
-    public  Chatator SelectChatator;
+    public character CharacterSelection;
     private void Awake()
     {
         base.Awake();

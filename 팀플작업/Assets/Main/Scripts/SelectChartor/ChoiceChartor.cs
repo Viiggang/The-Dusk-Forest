@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ChoiceChartor : MonoBehaviour
 {
-    public Chatator chatator;
+    public character m_character;
     Button button;
     private void Awake()
     {
@@ -14,6 +14,6 @@ public class ChoiceChartor : MonoBehaviour
     }
     void SetChartorChoiceInfo()
     {
-        Select.Instance.SelectChatator=chatator;
+        CharacterSelectionController.Instance.CharacterSelection = m_character;
     }
 }
