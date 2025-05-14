@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 public partial class InputKey
 {
     private static Stack<GameObject> uiStack = new Stack<GameObject>();
+    Stack<GameObject> tempStack = new Stack<GameObject>();
     public GameObject uiRoot;
 
     public void ShowMapUI() => ShowUI("inven");
@@ -12,8 +14,25 @@ public partial class InputKey
 
     public void ShowUI(string name)
     {
+
         var target = FindUIByName(name);
-        if (target != null && !uiStack.Contains(target))
+        if (target.gameObject.activeSelf)
+        {
+            target.gameObject.SetActive(false);
+            
+
+            while (uiStack.Count > 0)
+            {
+               var value = uiStack.Pop();
+                if (value != target)
+                    tempStack.Push(value);
+            }
+            while (tempStack.Count > 0)
+            {
+                uiStack.Push(tempStack.Pop());
+            }
+        }
+        else if (target != null && !uiStack.Contains(target))
         {
             target.SetActive(true);
             uiStack.Push(target);

@@ -6,7 +6,7 @@ using UnityEngine;
 {
     // 키 문자(string) → 함수 매핑
     private Dictionary<KeyCode, Action> keyFunctionMap = new Dictionary<KeyCode, Action>();
-    public ChainPattern chainPattern;//<--직려화로 붙여넣기
+    public ChainPattern chainPattern;//<--직렬화로 붙여넣기
     void Start()
     {
         // 키 매핑 등록
