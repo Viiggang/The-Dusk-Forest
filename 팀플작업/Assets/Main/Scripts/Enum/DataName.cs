@@ -1,5 +1,5 @@
 
- public enum SceneDataLoad
+ public enum DataName
 {
     SceneOneData,
 

@@ -8,6 +8,14 @@ public class SelectWindowController : MonoBehaviour
     string myName;
     Button SelfButton;
     public Text SelectionText;
+
+    public static class ButtonInfo
+    {
+        public const string YesButtonText = "Yes";
+        public const string NoButtonText = "No";
+        public const string JobText = "JobText";
+    }
+
     private void Awake()
     {
         myName = this.gameObject.name;

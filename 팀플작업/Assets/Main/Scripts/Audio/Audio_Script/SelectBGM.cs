@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectBGM : MonoBehaviour
+
+namespace Leein
 {
 
-    public AudioState Audiopath;
-    protected void Start()
+    public class SelectBGM : MonoBehaviour
     {
-        if (AudioMachine.Instance != null)
+
+        public AudioState Audiopath;
+        protected void Start()
         {
-            AudioMachine.Instance.ChangeAudioClip(Audiopath);
+            if (AudioMachine.Instance != null)
+            {
+                AudioMachine.Instance.ChangeAudioClip(Audiopath);
+            }
         }
     }
+
 }

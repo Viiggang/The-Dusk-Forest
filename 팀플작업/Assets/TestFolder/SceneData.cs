@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Data/AudioEntry")]
+[CreateAssetMenu(menuName = "Data/SceneData")]
 public class SceneData : ScriptableObject
 {
     //public SoundType soundType;  // 여기서 드롭다운이 보기 좋은 이름으로 보임

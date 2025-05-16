@@ -2,11 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
- 
+using Custom.CustomComponent;
 
 public class GameSceneManager : MonoBehaviour
 {
-    
+    public GameObject ParentsOBJ;
+    GameObject[] children; 
     //<Layer이름>
     public struct UILayerNames
     {
@@ -20,10 +21,10 @@ public class GameSceneManager : MonoBehaviour
     //<리소스 경로>
     public struct ResourcePaths
     {
-        public const string FontPath= "Image_resources/";
-        public const string ButtonImagePath="Font_resources/";
-        public const string BackGroundImagePath = "Image_resources/";
-        public const string SceneDataPath = "SceneData/";
+        public const string FontPath= "Image_resources";
+        public const string ButtonImagePath="Font_resources";
+        public const string BackGroundImagePath = "Image_resources";
+        public const string SceneDataPath = "SceneData";
     }
 
     string LayerName;//오브젝트Layer값을 받을 변수
@@ -38,7 +39,22 @@ public class GameSceneManager : MonoBehaviour
     Image image;// 오브젝트 이미지
     
     SceneData m_Data;//스크립트오브젝트 <-- 리소스빌드함
-
+    void Findchildren()
+    {
+        int i = 0;
+        var FindObj = GetComponentsInChildren<ComponentEnum>();
+        foreach (var obj in FindObj)
+        {
+            if (obj != null)
+            {
+                children[i++] = obj.GetComponent<GameObject>();
+            }
+        }
+        foreach (var obj in children)
+        {
+            Debug.Log($"오브젝트 이름 :{obj.name}");
+        }
+    }
     private void Awake()
     {
         //컴포넌트 할당
@@ -69,7 +85,7 @@ public class GameSceneManager : MonoBehaviour
     }
     void ResourceBuild()  //리소스 빌드
     {
-        var TestPath = ResourcePaths.SceneDataPath+ SceneDataLoad.SceneOneData.ToString();//<-enum으로 변경예정
+        var TestPath = ResourcePaths.SceneDataPath+"/"+ DataName.SceneOneData.ToString();//<-enum으로 변경예정
         m_Data = Resources.Load<SceneData>(TestPath);
         if(m_Data == null)
         { 
@@ -77,7 +93,7 @@ public class GameSceneManager : MonoBehaviour
             return;
         }
 
-        var FontImagePath = ResourcePaths.FontPath + m_Data.FontImage.ToString();
+        var FontImagePath = ResourcePaths.FontPath + "/" + m_Data.FontImage.ToString();
         loadedImage = Resources.Load<Sprite>(FontImagePath);
         if (loadedImage == null) 
         {
@@ -85,7 +101,7 @@ public class GameSceneManager : MonoBehaviour
             return;
         }
 
-        var ButtonImagePath = ResourcePaths.ButtonImagePath+ m_Data.ButtonImage.ToString();
+        var ButtonImagePath = ResourcePaths.ButtonImagePath+ "/" + m_Data.ButtonImage.ToString();
         loadedTextFont = Resources.Load<Font>(ButtonImagePath);
         if (loadedTextFont == null) 
         { 
@@ -159,7 +175,7 @@ public class GameSceneManager : MonoBehaviour
     }
     void SetupBackgroundImage()
     {
-        var BackGroundImagePath = ResourcePaths.BackGroundImagePath + m_Data.BackImage.ToString();
+        var BackGroundImagePath = ResourcePaths.BackGroundImagePath+"/" + m_Data.BackImage.ToString();
         var Load = Resources.Load<Sprite>(BackGroundImagePath);
         if (Load != null)
         {
