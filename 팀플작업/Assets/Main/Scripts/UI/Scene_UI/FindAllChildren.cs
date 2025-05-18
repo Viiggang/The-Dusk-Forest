@@ -1,4 +1,5 @@
 using Custom.CustomComponent;
+using Custom.CustomResource;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,16 @@ using static GameSceneManager;
 using static Unity.VisualScripting.Metadata;
 
 namespace Leein
-{  
+{
+   
     //<리소스 경로>
     public static class ResourcePaths
     {
-        public const string FontPath = "Image_resources";
-        public const string ButtonImagePath = "Font_resources";
-        public const string BackGroundImagePath = "Image_resources";
-        public const string SceneDataPath = "SceneData";
+        public const string FontPath = FolderPaths.Imagepaths;
+        public const string ButtonImagePath = FolderPaths.Imagepaths;
+        public const string BackGroundImagePath = FolderPaths.Imagepaths;
+        public const string SceneDataPath = FolderPaths.ScriptableObjectPath;
+        public const string AudioPath = FolderPaths.AudioPath;
     }
 
     public class FindAllChildren : MonoBehaviour//<< 테스트 코드
@@ -81,6 +84,7 @@ namespace Leein
 
         void Title(GameObject ChildObject)
         {
+           
             Debug.Log("TitleTitle");
             var Text = ChildObject.SafeGetComponentInChildren<Text>("Text");
             var rectTransform = ChildObject.SafeGetComponent<RectTransform>("RectTransform");
