@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 256330168}
   - component: {fileID: 256330169}
   m_Layer: 8
-  m_Name: UI_exit
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 269612440}
   - component: {fileID: 269612441}
   m_Layer: 6
-  m_Name: UI_GameStart
+  m_Name: GameStartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 300607837}
   - component: {fileID: 300607838}
   m_Layer: 5
-  m_Name: "\uC81C\uBAA9"
+  m_Name: title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,7 +1247,7 @@ GameObject:
   - component: {fileID: 952835457}
   - component: {fileID: 952835458}
   m_Layer: 5
-  m_Name: "\uBC30\uACBD"
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1301,7 +1301,7 @@ GameObject:
   - component: {fileID: 1046972911}
   - component: {fileID: 1046972912}
   m_Layer: 7
-  m_Name: UI_GameOption
+  m_Name: GameOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1443,7 +1443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1048464375}
-  - component: {fileID: 1048464374}
+  - component: {fileID: 1048464376}
   m_Layer: 0
   m_Name: ObjManager
   m_TagString: Untagged
@@ -1451,19 +1451,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1048464374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048464373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7bb11f4d642c5745a65cd7bc58c695d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneAllObj: {fileID: 1048464373}
 --- !u!4 &1048464375
 Transform:
   m_ObjectHideFlags: 0
@@ -1481,6 +1468,22 @@ Transform:
   - {fileID: 1417163418}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1048464376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048464373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db5cdb6351769548aeb40f3138b5c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadData: {fileID: 0}
+  Font: {fileID: 0}
+  Sprite: {fileID: 0}
+  LoadDataName: 0
 --- !u!1 &1096343743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,7 +1544,7 @@ GameObject:
   - component: {fileID: 1126669785}
   - component: {fileID: 1126669786}
   m_Layer: 5
-  m_Name: "\uBC30\uACBD\uC74C\uC545_\uC785\uB825"
+  m_Name: BackGroundSelectMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1590,7 +1593,7 @@ GameObject:
   - component: {fileID: 1318104926}
   - component: {fileID: 1318104927}
   m_Layer: 0
-  m_Name: "=====\uD30C\uAD34\uBD88\uAC00\uC624\uBE0C\uC81D\uD2B8====="
+  m_Name: =====Dondestory=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1638,7 +1641,7 @@ GameObject:
   - component: {fileID: 1417163416}
   - component: {fileID: 1417163415}
   m_Layer: 5
-  m_Name: Button_UI
+  m_Name: ButtonUIGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1742,7 +1745,7 @@ GameObject:
   - component: {fileID: 1523517826}
   - component: {fileID: 1523517825}
   m_Layer: 5
-  m_Name: Screen_UI
+  m_Name: ScreenUIGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

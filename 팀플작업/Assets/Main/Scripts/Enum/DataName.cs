@@ -1,6 +1,12 @@
 
- public enum DataName
+
+using System.Runtime.Serialization;
+
+
+[System.Serializable]
+public enum DataName
 {
+    [EnumDisplayName("첫 번째 씬 데이터")]
     SceneOneData,
 
 }

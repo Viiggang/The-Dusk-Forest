@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using Leein;
+ 
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 using Unity.VisualScripting;
-namespace Custom.CustomResource
+namespace Leein
 {
+
     public static class FolderPaths
     {
         public const string Imagepaths = "Image_resources";
@@ -16,7 +17,7 @@ namespace Custom.CustomResource
         public const string AudioPath = "Audio_resources";
     }
 
-    public static class CustomResourceLoad  
+    public static class CustomResourceLoad
     {
         public static AudioClip LoadAudioClip(this string _Str, string resourceName)
         {
@@ -48,7 +49,7 @@ namespace Custom.CustomResource
 
         public static Font LoadFont(this string _Str, string resourceName)
         {
-            var item = Resources.Load<Font>(FolderPaths.FontPaths+"/"+ resourceName);
+            var item = Resources.Load<Font>(FolderPaths.FontPaths + "/" + resourceName);
             if (item == null)
             {
                 Debug.LogError($"[ResourceLoader] Failed to load: {resourceName}");
@@ -72,7 +73,7 @@ namespace Custom.CustomResource
             }
             return item;
         }
-        
+
 
         public static Sprite LoadSprite(this string resourceName)
         {
@@ -100,9 +101,9 @@ namespace Custom.CustomResource
             }
             return item;
         }
-        public static ScriptableObject Loadscriptobject(this string _Str,string resourceName)
+        public static T LoadScriptObject<T>(string resourceName) where T : ScriptableObject
         {
-            var item = Resources.Load<SceneData>(FolderPaths.ScriptableObjectPath + "/" + resourceName);
+            T item = Resources.Load<T>(FolderPaths.ScriptableObjectPath + "/" + resourceName);
             if (item == null)
             {
                 Debug.LogError($"[ResourceLoader] Failed to load: {resourceName}");
@@ -114,6 +115,8 @@ namespace Custom.CustomResource
             return item;
         }
     }
-    
+
 }
+
+
 

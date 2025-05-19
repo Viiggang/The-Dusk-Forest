@@ -1,6 +1,6 @@
 
 using UnityEngine;
-namespace Custom.CustomComponent
+namespace Leein
 {
     public static class CustomComponent
     {
@@ -18,13 +18,21 @@ namespace Custom.CustomComponent
             T componentChildren = gameObject.GetComponentInChildren<T>();
             if (componentChildren == null)
             {
-                T component = gameObject.SafeGetComponent<T>(ErrorMessage);
-                return component;
+                Debug.LogError($"{gameObject.name}+{ErrorMessage} 컴포넌트를 찾을 수 없습니다.");
             }
             return componentChildren;
         }
-        
-       
+        public static T[] SafeFindObjectsOfType<T>() where T : Object
+        {
+            var value = Object.FindObjectsOfType<T>();
+            var type= typeof(T);
+            if (value == null)
+            {
+                Debug.LogError($"{type} 컴포넌트를 찾을 수 없습니다.");
+            }
+            return value;
+        }
+
     }
 
 }
